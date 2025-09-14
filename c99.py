@@ -1,4 +1,5 @@
 import random
+import sys
 import requests
 from bs4 import BeautifulSoup as bs
 from datetime import datetime, timedelta
@@ -50,3 +51,5 @@ def get_urls(domain,max_minutes=4):
         else:
             today -= timedelta(days=1) 
     return list(set(results))
+
+print(get_urls(sys.argv[1]))
